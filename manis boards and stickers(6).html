@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mani's Boards & Stickers</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background: linear-gradient(to right, #f4f9ff, #e6f0ff);
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align:center;
+    color:#222;
+}
+
+/* HEADER */
+.header{
+    padding:40px 20px;
+}
+
+.header h1{
+    font-size:60px;
+    font-family: Georgia, serif;
+    color:#0047ab;
+    letter-spacing:2px;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.header p{
+    margin-top:10px;
+    font-size:22px;
+    color:#555;
+}
+
+/* BUTTON AREA */
+.button-box{
+    padding:20px;
+}
+
+button{
+    padding:15px 28px;
+    margin:12px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(45deg,#0066ff,#00bfff);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:linear-gradient(45deg,#0047ab,#0099ff);
+}
+
+/* DISPLAY SECTION */
+#display-section{
+    display:none;
+    width:90%;
+    margin:30px auto;
+    padding:40px;
+    border-radius:25px;
+    background:white;
+    box-shadow:0 0 25px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+#display-title{
+    font-size:42px;
+    color:#0047ab;
+    margin-bottom:30px;
+    font-family:Verdana, sans-serif;
+}
+
+/* GALLERY */
+#image-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+/* IMAGE STYLE */
+#image-gallery img{
+    width:300px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid #00a2ff;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+#image-gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT BOX */
+.contact-box{
+    background:linear-gradient(45deg,#0047ab,#0099ff);
+    color:white;
+    padding:35px;
+    border-radius:25px;
+    width:100%;
+    max-width:650px;
+    margin:auto;
+    font-size:21px;
+    line-height:2;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.contact-box h3{
+    font-size:35px;
+    margin-bottom:20px;
+    font-family:Georgia, serif;
+}
+
+/* FOOTER */
+footer{
+    margin-top:40px;
+    padding:20px;
+    background:#0047ab;
+    color:white;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Mani's Boards & Stickers</h1>
+    <p>Creative Designs • LED Boards • Custom Stickers</p>
+</div>
+
+<div class="button-box">
+    <button onclick="showDesigns('Order Now')">Order Now</button>
+    <button onclick="showDesigns('View Designs')">View Designs</button>
+    <button onclick="showDesigns('LED Boards')">LED Boards</button>
+    <button onclick="showDesigns('Custom Stickers')">Custom Stickers</button>
+    <button onclick="showDesigns('Sign Boards')">Sign Boards</button>
+    <button onclick="showContact()">Contact Us</button>
+</div>
+
+<div id="display-section">
+    <h2 id="display-title"></h2>
+    <div id="image-gallery"></div>
+</div>
+
+<footer>
+    © 2026 Mani's Boards & Stickers | Designed with Creativity
+</footer>
+
+<script>
+
+function showDesigns(type){
+
+    let title = document.getElementById("display-title");
+    let gallery = document.getElementById("image-gallery");
+    let section = document.getElementById("display-section");
+
+    title.innerHTML = type;
+
+    gallery.innerHTML = `
+        <img src="https://picsum.photos/300/220?random=1">
+        <img src="https://picsum.photos/300/220?random=2">
+        <img src="https://picsum.photos/300/220?random=3">
+    `;
+
+    section.style.display = "block";
+}
+
+function showContact(){
+
+    let title = document.getElementById("display-title");
+    let gallery = document.getElementById("image-gallery");
+    let section = document.getElementById("display-section");
+
+    title.innerHTML = "Contact Us";
+
+    gallery.innerHTML = 
+        <div class="contact-box">
+            <h3>Mani's Boards & Stickers</h3>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Email:</strong> maniboards@gmail.com</p>
+            <p><strong>Address:</strong> Tamil Nadu, India</p>
+            <p><strong>Instagram:</strong> @maniboards</p>
+        </div>
+    ;
+
+    section.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
